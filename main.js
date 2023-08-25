@@ -57,14 +57,13 @@ app.post('/generar-pdf', (req, res) => {
 
     doc.fontSize(11).font('Helvetica')
       .image('images/logo.png', 240, 40, {width: 130, align: 'center'})
-      .text(`En ${pais}, a ${dia}/${mes}/${anio}`, 100, 100, {align: 'start'})
-      .text(`Yo ${nombre}, trabajador de la empresa de mensajería y paquetería`, 100, 120)
-      .text(`${empresa} con identificación ${identificacion} he recibido de: ${agente} `, 100, 140)
-      .text(`agente de HANNAN-PIPER REAL ESTATE un paquete con el `, 100, 160)
-      .text(`contenido de llaves.`, 100, 180)
-      .text(`Y para que ello conste, así lo firmo.`, 100, 240)
-      .text('Firma / Signature:', 100, 260, {align: 'center'})
-      .image(imgData1, 270, 310, {width: 90, align: 'center'})    
+      .text(`En ${pais}, a:     ${dia}/${mes}/${anio}`, 100, 100, {align: 'start'})
+      .text(`Yo ${nombre}, trabajador de la empresa de mensajería y paquetería ${empresa}`, 100, 120)
+      .text(`con identificación ${identificacion} he recibido de: ${agente} agente de HANNAN-PIPER`, 100, 140)
+      .text(`REAL ESTATE un paquete con el contenido de llaves. `, 100, 160)
+      .text(`Y para que ello conste, así lo firmo.`, 100, 190)
+      .text('Firma / Signature:', 100, 240, {align: 'center'})
+      .image(imgData1, 270, 290, {width: 90, align: 'center'})    
     
     // Finalizar y guardar el archivo PDF
     doc.end();
